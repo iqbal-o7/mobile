@@ -38,6 +38,9 @@
         <div class="carousel-caption bg-dark bg-opacity-50 rounded-4 p-4">
           <h1 class="fw-bold display-5">Kalkulator Kredit Mobil</h1>
           <p class="mb-0 fs-5">Hitung estimasi angsuran mobil impianmu dengan mudah, cepat, dan akurat.</p>
+          <a href="#kredit" class="btn btn-primary btn-lg px-4">
+            Hitung Kredit Sekarang
+          </a>
         </div>
       </div>
       <div class="carousel-item h-100">
@@ -45,6 +48,9 @@
         <div class="carousel-caption bg-dark bg-opacity-50 rounded-4 p-4">
           <h1 class="fw-bold display-5">Simulasi Kredit Instan</h1>
           <p class="mb-0 fs-5">Masukkan harga mobil, DP, dan tenor untuk melihat estimasi cicilan per bulan.</p>
+          <a href="#kredit" class="btn btn-primary btn-lg px-4">
+            Hitung Kredit Sekarang
+          </a>
         </div>
       </div>
       <div class="carousel-item h-100">
@@ -52,6 +58,9 @@
         <div class="carousel-caption bg-dark bg-opacity-50 rounded-4 p-4">
           <h1 class="fw-bold display-5">Solusi Pembiayaan Terpercaya</h1>
           <p class="mb-0 fs-5">Kalkulator kredit mobil untuk membantu perencanaan keuangan sebelum membeli mobil.</p>
+           <a href="#kredit" class="btn btn-primary btn-lg px-4">
+            Hitung Kredit Sekarang
+          </a>
         </div>
       </div>
     </div>
@@ -142,6 +151,11 @@
         <h5>Angsuran Per Bulan</h5>
         <h2 class="fw-bold" id="outAngsuran"></h2>
       </div>
+      <div class="text-center mt-3">
+      <button type="button" id="refreshBtn" class="btn btn-outline-primary px-4">
+         ↻ Hitung Ulang
+      </button>
+     </div>
     </div>
   </div>
 </section>
@@ -189,6 +203,17 @@ formKredit.addEventListener("submit", function (e) {
 
   hasilSection.classList.remove("d-none");
   hasilSection.scrollIntoView({ behavior: "smooth" });
+  document.getElementById("refreshBtn").addEventListener("click", function () {
+  formKredit.reset();
+  hargaFormat.textContent = "";
+  hasilSection.classList.add("d-none");
+
+  document.getElementById("kredit").scrollIntoView({
+    behavior: "smooth"
+  });
+
+  hargaInput.focus();
+});
 });
 </script>
 </body>
